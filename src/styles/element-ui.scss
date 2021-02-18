@@ -1,0 +1,143 @@
+ //覆盖一些element-ui样式
+ .block-checkbox {
+   display: block;
+ }
+
+ .operation-container {
+   .cell {
+     padding: 10px !important;
+   }
+   .el-button {
+     &:nth-child(3) {
+       margin-top: 10px;
+       margin-left: 0px;
+     }
+     &:nth-child(4) {
+       margin-top: 10px;
+     }
+   }
+ }
+
+ .el-upload {
+   input[type="file"] {
+     display: none !important;
+   }
+ }
+
+ .el-upload__input {
+   display: none;
+ }
+
+ .cell {
+   .el-tag {
+     margin-right: 8px;
+   }
+ }
+
+ .small-padding {
+   .cell {
+     padding-left: 8px;
+     padding-right: 8px;
+   }
+ }
+
+ .status-col {
+   .cell {
+     padding: 0 10px;
+     text-align: center;
+     .el-tag {
+       margin-right: 0px;
+     }
+   }
+ }
+
+ //暂时性解决diolag 问题 https://github.com/ElemeFE/element/issues/2461
+ .el-dialog {
+   transform: none;
+   left: 0;
+   position: relative;
+   margin: 0 auto;
+ }
+
+ //文章页textarea修改样式
+ .article-textarea {
+   textarea {
+     padding-right: 40px;
+     resize: none;
+     border: none;
+     border-radius: 0px;
+     border-bottom: 1px solid #bfcbd9;
+   }
+ }
+
+ //element ui upload
+ .upload-container {
+   .el-upload {
+     width: 100%;
+     .el-upload-dragger {
+       width: 100%;
+       height: 200px;
+     }
+   }
+ }
+ body .el-table th.gutter{
+  display: table-cell!important;
+  }
+  
+  body .el-table colgroup.gutter{
+  display: table-cell!important;
+  }
+  // 用户信息  修改密码
+  .changePass .el-dropdown-menu__item {
+    list-style: none;
+    line-height: 30px;
+    padding: 0 10px;
+    margin: 0;
+    cursor: pointer;
+}
+.passInput .el-input__inner{
+  background: transparent;
+  border: 0;
+  -webkit-appearance: none;
+  line-height: 42px;
+  height: 42px;
+  // width: 100%;
+  border: solid 1px #389ef6;
+  border-radius: 6px;
+  width: 281px;
+  padding-left: 15px;
+  padding-right: 15px;
+  color: #333;
+}
+// 保证金
+.erroeDone  .el-form-item__error {
+  display: none;
+}
+// 我的增值服务
+.el-tooltip__popper.is-light {
+  background: #fff;
+  border: 1px solid #D5D5D5;
+  box-shadow:2px 2px 4px #D5D5D5
+}
+ .el-tooltip__popper.is-light[x-placement^=top] .popper__arrow {
+  border-top-color: #D5D5D5;
+}
+.el-tooltip__popper.is-light[x-placement^=bottom] .popper__arrow {
+  border-bottom-color: #D5D5D5;
+}
+// 第三方平台  异常订单
+.el-table  td.descName  .cell{
+  height: 50px;
+  overflow-y: auto;
+  text-align: left;
+  line-height: 24px
+}
+// 财务收支
+.payment .el-tabs__header {
+  border-bottom: 1px solid #d1dbe5;
+  padding: 0;
+  position: relative;
+   margin:0px;}
+   .payment .el-tab-pane{
+     margin-top: 15px;
+   }

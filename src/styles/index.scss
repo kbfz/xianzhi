@@ -1,0 +1,729 @@
+@import './mixin.scss';
+@import './btn.scss';
+@import './element-ui.scss';
+@import './sidebar.scss';
+
+body {
+  height: 100%;
+  margin: 0;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Arial, sans-serif;
+  padding-right:0!important;
+  // overflow-y:auto;
+}
+
+label {
+  font-weight: 700;
+}
+
+html {
+  box-sizing: border-box;
+  height: 100%;
+  overflow-y:hidden;
+}
+ #app {
+   height: 100%
+ }
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+.no-padding {
+  padding: 0px !important;
+}
+
+.padding-content {
+  padding: 4px 0;
+}
+
+a:focus,
+a:active {
+  outline: none;
+}
+
+a,
+a:focus,
+a:hover {
+  cursor: pointer;
+  color: inherit;
+  text-decoration: none;
+}
+ul, ol{
+  list-style: none
+}
+.fr {
+  float: right;
+}
+
+.fl {
+  float: left;
+}
+
+.pr-5 {
+  padding-right: 5px;
+}
+
+.pl-5 {
+  padding-left: 5px;
+}
+
+.block {
+  display: block;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.inlineBlock {
+  display: block;
+}
+
+code {
+  background: #eef1f6;
+  padding: 15px 10px;
+  margin-bottom: 20px;
+  display: block;
+  line-height: 36px;
+  a {
+    color: #337ab7;
+    cursor: pointer;
+    &:hover {
+      color: rgb(32, 160, 255);
+    }
+  }
+}
+.fade-enter-active,
+.fade-leave-active {
+  transition: all .2s ease
+}
+
+.fade-enter,
+.fade-leave-active {
+  opacity: 0;
+}
+
+// 根据高度控制滚动条的滚动高度
+  // @media all and  (max-height:900px){
+  //   // body{color:#f00;}
+  //   .app-main{
+  //     overflow-y: scroll;
+  //     height: 720px;
+  //   }
+  // }
+  // @media all and (min-height:750px) and  (max-height:800px){
+  //    // body{color:#f00;}
+  //   .app-main{
+  //     overflow-y: scroll;
+  //     height: 600px;
+  //   }
+  // }
+  // @media all and (min-height:650px) and (max-height:700px){
+  // // body{color:#f00;}
+  //   .app-main{
+  //     overflow-y: scroll;
+  //     height: 500px;
+  //   }
+  // }
+  // @media all and (min-height:550px) and (max-height:600px) {
+  //   // body{color:#f00;}
+  //   .app-main{
+  //     overflow-y: scroll;
+  //     height: 400px;
+  //   }
+  // }
+  // @media all and  (max-height:500px){
+  //  //body{color:#f00;}
+  //   .app-main{
+  //     overflow-y: scroll;
+  //     height: 330px;
+  //   }
+  // }
+// 右边页面分为两部分
+.app-container-left {
+  padding: 1px;
+  height: 100%;
+  padding-right: 10px;
+}
+// 分割线
+.border{
+  width: 1px;
+  border-left: 1px solid #EEF1F6;
+  height: 100%;
+  float: left;
+  position:fixed;
+  margin: 0;
+  padding: 0
+  // bottom: 10px;
+}
+.app-container-right {
+  // border-left: 1px solid #DEDEE6;
+  height: 100%;
+  padding-right: 10px;
+  padding-left: 10px
+}
+.components-container {
+  margin: 30px 50px;
+  position: relative;
+}
+.pagination-container {
+  margin-top: 30px;
+}
+
+.editor-container .CodeMirror {
+  height: 100%!important;
+}
+
+.text-center{
+  text-align: center
+}
+.svg-icon {
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
+}
+.sub-navbar {
+  height: 50px;
+  line-height: 50px;
+  position: relative;
+  width: 100%;
+  text-align: right;
+  padding-right: 20px;
+  transition: 600ms ease position;
+  background: linear-gradient(90deg, rgba(32, 182, 249, 1) 0%, rgba(32, 182, 249, 1) 0%, rgba(33, 120, 241, 1) 100%, rgba(33, 120, 241, 1) 100%);
+  .subtitle {
+    font-size: 20px;
+    color: #fff;
+  }
+  &.draft {
+    background: #d0d0d0;
+  }
+  &.deleted {
+    background: #d0d0d0;
+  }
+}
+
+.link-type,
+.link-type:focus {
+  color: #337ab7;
+  cursor: pointer;
+  &:hover {
+    color: rgb(32, 160, 255);
+  }
+}
+
+.publishedTag,
+.draftTag,
+.deletedTag {
+  color: #fff;
+  background-color: $panGreen;
+  line-height: 1;
+  text-align: center;
+  margin: 0;
+  padding: 8px 12px;
+  font-size: 14px;
+  border-radius: 4px;
+  position: absolute;
+  left: 20px;
+  top: 10px;
+}
+
+.draftTag {
+  background-color: $yellow;
+}
+
+.deletedTag {
+  background-color: $red;
+}
+
+.input-label {
+  font-size: 14px;
+  color: #48576a;
+  line-height: 1;
+  padding: 11px 5px 11px 0;
+}
+
+.clearfix {
+  &:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+  }
+}
+
+.no-marginLeft {
+  .el-checkbox {
+    margin: 0 20px 15px 0;
+  }
+  .el-checkbox+.el-checkbox {
+    margin-left: 0px;
+  }
+}
+
+.filter-container {
+  padding-bottom: 10px;
+  .filter-item {
+    display: inline-block;
+    vertical-align: middle;
+    margin-bottom: 2px;
+  }
+}
+
+
+//refine vue-multiselect plugin
+.multiselect {
+  line-height: 16px;
+}
+
+.multiselect--active {
+  z-index: 1000 !important;
+}
+
+//refine simplemde
+.simplemde-container{
+  .editor-toolbar.fullscreen,.CodeMirror-fullscreen{
+    z-index: 1003;
+  }
+}
+
+//暂时性解决diolag 问题 https://github.com/ElemeFE/element/issues/2461
+.el-dialog {
+  transform: none;
+  left: 0;
+  position: relative;
+  margin: 0 auto;
+}
+
+//github-corner
+.github-corner:hover .octo-arm {
+  animation: octocat-wave 560ms ease-in-out
+}
+// 加载框的优先级
+.el-loading-mask {
+  position: absolute;
+  z-index: 1000;
+  background-color: rgba(255,255,255,.9);
+  margin: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 200!important;
+  transition: opacity .3s;}
+@keyframes octocat-wave {
+  0%,
+  100% {
+    transform: rotate(0)
+  }
+  20%,
+  60% {
+    transform: rotate(-25deg)
+  }
+  40%,
+  80% {
+    transform: rotate(10deg)
+  }
+}
+
+@media (max-width:500px) {
+  .github-corner:hover .octo-arm {
+    animation: none
+  }
+  .github-corner .octo-arm {
+    animation: octocat-wave 560ms ease-in-out
+  }
+}
+.el-table td, .el-table th {
+  height: 33px;
+  min-width: 0;
+  text-overflow: ellipsis;
+  vertical-align: middle;
+}
+.el-table .cell {
+  white-space: normal;
+  word-break: break-all;
+  line-height: 15px;
+}
+// 表格固定列边框样式
+ .el-table__fixed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  box-shadow: 0.5px 0 0px #dfe6ec !important;
+  overflow-x: hidden;
+}
+// 表格右侧固定样式、
+.el-table__fixed-right {
+  top: 0;
+  left: auto;
+  right: 0;
+  box-shadow: 0.5px 0 3px #dfe6ec!important;
+}
+// .el-table__fixed, .el-table__fixed-right{
+//   box-shadow: 0.5px 0 3px #dfe6ec;!important
+// }
+// 订单详情里面的表格
+.el-table--fit td.gutter, .el-table--fit th.gutter {
+  border-right-width: 1px;
+  width: 0!important;
+  display: none
+}
+// 一般贸易 新增 表格样式
+.tabLayout .el-table__header {
+  // table-layout: auto!important;
+}
+.dialogWidth .el-dialog--small{
+  width: 60%;
+  margin: 0 auto
+}
+.addDialog .el-dialog--small {
+  width: 55%;
+  margin: 0 auto
+}
+.updateDialog .el-dialog--small {
+  width: 55%;
+  margin: 0 auto
+}
+// 单证文件配置  新增
+.tabs .el-tabs__item {
+  padding: 0 16px;
+  height: 42px;
+  box-sizing: border-box;
+  line-height: 42px;
+  display: inline-block;
+  list-style: none;
+  font-size: 14px;
+  color: #48576a;
+  position: relative;
+  font-weight: 700;
+}
+.tabs .el-tabs__item.is-active {
+  color: #20a0ff;
+}
+.updateName .el-input__inner {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: #fff;
+  background-image: none;
+  border-radius: 4px;
+  border: 1px solid #bfcbd9;
+  box-sizing: border-box;
+  color: #1f2d3d;
+  font-size: inherit;                                                                                                                                                                                                           
+  height: 35px;
+  line-height: 1;
+  outline: 0;
+  padding: 3px 10px;
+  transition: border-color .2s cubic-bezier(.645,.045,.355,1);
+}
+
+//去掉table的滚动条
+.tableovers .el-table__body-wrapper, .tableover .el-table__body-wrapper{
+  overflow: hidden;
+  border-bottom: 1px #333 solid;
+}
+.tableovers .el-table__body tr:hover>td, .tableover .el-table__body tr:hover>td{
+  background-color:#fff;
+}
+.tableover .el-table__header-wrapper{
+  border-bottom: 1px #333 solid;
+}
+.tableovers .el-table__header-wrapper thead div, .tableover .el-table__header-wrapper thead div{
+  background-color: #fff;
+}
+.tableovers th, .tableover th{
+  background-color: #fff
+}
+// 报关草单信息
+.tableover td{
+  border-bottom: 1px #7F7F7F dashed;
+}
+//固定弹出框的大小
+.fixdialog .el-dialog--small{
+  width: 960px
+}
+.fixWidth .el-dialog--small{
+  width: 1000px
+}
+.fixWidth2 .el-dialog--small{
+  width: 1100px
+}
+.receiptWidth .el-dialog--small{
+  width: 850px
+}
+.receiptWidth800 .el-dialog--small{
+  width: 800px
+}
+.receiptWidth450 .el-dialog--small{
+  width: 450px
+}
+.receiptWidth500 .el-dialog--small{
+  width: 650px
+}
+.fixWidth3 .el-dialog__body  .el-dialog--small{
+  width: 650px
+}
+.receiptWidth600 .el-dialog--small{
+  width: 570px
+}
+.receiptWidth590 .el-dialog--small{
+  width: 590px
+}
+.receiptSupplier .el-dialog--small{
+  width: 740px
+}
+.receiptSupplier750 .el-dialog--small{
+  width: 925px
+}
+.codeWidth .el-dialog--small{
+  width: 880px
+}
+.fixWidth3 .el-dialog--small{
+  width: 1050px
+}
+// 角色权限分配  权限管理
+.groupWidth .el-dialog--small{
+  width: 80%;
+  top: 8%!important;
+}
+.logisticsWidth .el-dialog--small{
+  top: 10%!important;
+}
+.groupHeight .el-dialog--small{
+  height: 785px;
+}
+// 单证文件配置 发票
+.leftInvoice .el-form-item__label {
+  text-align: right;
+  vertical-align: middle;
+  float: left;
+  font-size: 14px;
+  color: #48576a;
+  line-height: 1;
+  padding: 14px 12px 11px 0;
+  box-sizing: border-box;
+  border-right: 1px solid #DFE6EC;
+  width: 50%;
+  text-align: center;
+}
+
+.formth .el-form-item__label {
+  vertical-align: middle;
+  float: left;
+  font-size: 14px;
+  color: #48576a;
+  line-height: 1;
+  padding: 18px 12px 11px 0;
+  box-sizing: border-box;
+  width: 100%;
+  text-align: center;
+  background: #EEF1F6;
+}
+// 下拉框选择的时候下面出现空白
+.declarationAdd .el-form-item__content {
+  line-height: 34px;
+  position: relative;
+  font-size: 14px;
+}
+.nameInfo .el-input__inner{
+  height: 35px;
+  line-height: 1;
+}
+// 保证金列表
+.marginListAdd .el-form-item__content {
+  line-height: 0px;
+  position: relative;
+  font-size: 14px;
+}
+//更改select默认样式
+.borderbottom .el-input__inner{
+  background-color: #faffbd !important;
+  border-radius: 0;
+  border: 1px solid #faffbd !important;
+  transition: none;
+}
+.borderbottom .el-input__inner:hover{
+  border-color:#faffbd !important;
+}
+.sell .el-form-item__error {
+  color: #ff4949;
+  font-size: 12px;
+  line-height: 1;
+  padding-top: 4px;
+  position: absolute;
+  top: '';
+  left: 0px;
+  display: none
+}
+// 登录页校验
+.customer .el-form-item__error {
+  padding-top: 0px;
+}
+// tab-pan 选中字体
+.active .el-tabs__item.is-active {
+  color: #20a0ff;
+  font-size: 18px;
+}
+.active2 .el-tabs__item.is-active {
+  color: #20a0ff;
+  font-size: 15px;
+}
+.areaText .el-textarea__inner {
+  display: block;
+  resize: vertical;
+  padding: 5px 7px;
+  line-height: 1.5;
+  width: 100%;
+  color: #20a0ff;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #bfcbd9;
+  border-radius: 4px;
+  transition: border-color .2s cubic-bezier(.645,.045,.355,1);
+}
+.tableNormal .el-table__body-wrapper {
+  overflow: auto;
+  position: relative;
+  overflow-x: hidden
+}
+
+.billcheck .el-checkbox+ .el-checkbox{
+  margin-left: 0 !important;
+}
+.billcheck .el-checkbox{
+  margin: 0 15px 15px 0 !important;
+}
+
+//小弹出框
+.dialogcss .el-dialog--small{
+  width: 30% !important
+}
+// 增值服务弹框 表格
+.diaTable .el-table__footer-wrapper thead div,.diaTable  .el-table__header-wrapper thead div {
+  background-color: #fff;
+  color: #1f2d3d;
+}
+// 表格合计 样式
+.el-table__footer{
+  table-layout: auto;
+  margin-left: 1px;
+  .cell{
+    color:#ef5a33;
+    font-weight: bold;
+  }
+}
+.diaTable th {
+  white-space: nowrap;
+  overflow: hidden;
+  background-color: #fff;
+  text-align: left;
+}
+
+//价格标红
+.redtext .el-form-item__label{
+  color: red;
+}
+.redtext .el-form-item__content{
+  font-size: 18px;
+}
+
+.noneborder .el-input__inner{
+  border: none;
+}
+.el-table th.gutter{
+  display: table-cell!important
+} 
+.el-table th.gutter,
+  colgroup.gutter {
+    display: block !important;
+    // width: 17px !important
+  }
+    .el-table--border th.gutter:last-of-type {
+      //  width: 17px !important;
+   }
+   .stockControl .el-table th.gutter,
+  colgroup.gutter {
+    width: 0px !important;
+  }
+  .el-select-dropdown{
+    position: absolute!important;
+  }
+  .optionsContent{
+    position: absolute!important;
+    z-index: 800!important;
+  }
+  .el-table td, .el-table th {
+    padding: 0;
+    min-width: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    text-overflow: ellipsis;
+    vertical-align: middle;
+    position: relative;
+    text-align: left;
+}
+.el-picker-panel {
+  color: #606266;
+  border: 1px solid #E4E7ED;
+  box-shadow: 0 2px 12px 0 rgba(0,0,0,.1);
+  background: #FFF;
+  border-radius: 4px;
+  line-height: 30px;
+  margin: 5px 0;
+}
+.timeSelect{
+  z-index: 800!important;
+}
+.wareTab.el-tabs--card>.el-tabs__header .el-tabs__item {
+  border:1px solid #d1dbe5;
+ border-bottom: 1px solid #d1dbe5;
+ transition: all .3s cubic-bezier(.645,.045,.355,1);
+}
+.wareTab .el-tabs__item {
+  padding: 0 17px;
+  height: 42px;
+  box-sizing: border-box;
+  line-height: 42px;
+  display: inline-block;
+  margin-right: 10px;
+  list-style: none;
+  font-size: 14px;
+  color: #8391a5;
+  position: relative;
+  background: #F2F2F2;
+  border-radius: 4px 4px 0 0;
+  border: 1px solid #d1dbe5;
+  border-bottom-color: #fff;
+}
+
+.wareTab .el-tabs__item.is-active {
+  color: #20a0ff;
+  background: #fff;
+  border-bottom: none;
+  border-bottom-color: #fff!important;
+}
+// .fixWidth3.zIndex{
+//   z-index: 2003!important;
+// }
+// .v-modal{
+//   z-index: 2002!important;
+// }
+.purchaseName .el-table--border th.gutter:last-of-type {
+  display: block !important;
+  width: 17px !important;
+}
+.uploadDialog .el-dialog__body {
+  padding: 30px 20px;
+  color: #48576a;
+  font-size: 14px;
+  overflow: hidden;}
